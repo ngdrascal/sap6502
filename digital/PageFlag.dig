@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>NAnd</elementName>
+      <elementAttributes>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NAnd</elementName>
+      <elementAttributes>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NAnd</elementName>
+      <elementAttributes>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="820" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>NAnd</elementName>
+      <elementAttributes>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="820" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>~CARRY8</string>
+        </entry>
+      </elementAttributes>
+      <pos x="420" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ALUOE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="420" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Page</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>~CARRY8  ALUOE  Page
+# transparent
+0        1      1
+1        1      0
+# latch last
+0        1      1
+1        0      1
+# latch last
+1        1      0
+1        0      0</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="840" y="160"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="540" y="380"/>
+      <p2 x="700" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="360"/>
+      <p2 x="940" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="320"/>
+      <p2 x="940" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="240"/>
+      <p2 x="580" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="920" y="400"/>
+      <p2 x="940" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="400"/>
+      <p2 x="580" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="400"/>
+      <p2 x="1020" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="260"/>
+      <p2 x="700" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="260"/>
+      <p2 x="820" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="420"/>
+      <p2 x="820" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="440"/>
+      <p2 x="500" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="440"/>
+      <p2 x="580" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="280"/>
+      <p2 x="580" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="920" y="280"/>
+      <p2 x="940" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="280"/>
+      <p2 x="1020" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="380"/>
+      <p2 x="820" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="300"/>
+      <p2 x="820" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="280"/>
+      <p2 x="500" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="380"/>
+      <p2 x="540" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="360"/>
+      <p2 x="780" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="300"/>
+      <p2 x="780" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="260"/>
+      <p2 x="700" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="280"/>
+      <p2 x="940" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="380"/>
+      <p2 x="940" y="400"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
