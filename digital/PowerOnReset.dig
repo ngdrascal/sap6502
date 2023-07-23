@@ -182,7 +182,7 @@
     <visualElement>
       <elementName>Break</elementName>
       <elementAttributes/>
-      <pos x="560" y="360"/>
+      <pos x="580" y="360"/>
     </visualElement>
     <visualElement>
       <elementName>RS_FF_AS</elementName>
@@ -326,6 +326,10 @@
     <wire>
       <p1 x="920" y="360"/>
       <p2 x="1000" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="360"/>
+      <p2 x="580" y="360"/>
     </wire>
     <wire>
       <p1 x="1400" y="440"/>

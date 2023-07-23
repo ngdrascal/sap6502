@@ -7,12 +7,6 @@
       <shapeType>LAYOUT</shapeType>
     </entry>
     <entry>
-      <string>romContent</string>
-      <romList>
-        <roms/>
-      </romList>
-    </entry>
-    <entry>
       <string>backgroundColor</string>
       <awt-color>
         <red>204</red>
@@ -22,8 +16,14 @@
       </awt-color>
     </entry>
     <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+    <entry>
       <string>Width</string>
-      <int>6</int>
+      <int>8</int>
     </entry>
   </attributes>
   <visualElements>
