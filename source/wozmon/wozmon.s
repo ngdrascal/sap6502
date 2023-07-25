@@ -1,5 +1,7 @@
-  .org $8000
-  .org $ff00
+; vasm6502_oldstyle -dotdir -c02 -Fbin -L wozmon.lst -Lfmt=wide -o wozmon.bin wozmon.s
+
+  .org $C000
+  .org $FF00
 
 XAML  = $24                            ; Last "opened" location Low
 XAMH  = $25                            ; Last "opened" location High
