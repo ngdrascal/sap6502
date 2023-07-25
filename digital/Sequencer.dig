@@ -2088,7 +2088,7 @@
     <visualElement>
       <elementName>SeqCounter.dig</elementName>
       <elementAttributes/>
-      <pos x="40" y="1180"/>
+      <pos x="-80" y="1180"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -2122,7 +2122,7 @@
           <string>~SEQRST</string>
         </entry>
       </elementAttributes>
-      <pos x="0" y="1240"/>
+      <pos x="-120" y="1240"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -2136,7 +2136,7 @@
           <string>MSTRRST</string>
         </entry>
       </elementAttributes>
-      <pos x="0" y="1220"/>
+      <pos x="-120" y="1220"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -2150,26 +2150,7 @@
           <string>CLK</string>
         </entry>
       </elementAttributes>
-      <pos x="0" y="1200"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Text</elementName>
-      <elementAttributes>
-        <entry>
-          <string>textFontSize</string>
-          <int>20</int>
-        </entry>
-        <entry>
-          <string>Description</string>
-          <string>STA (zeropage)
-
-00085: IREGLOAD | PCCLOCKLO | PCCLOCKHI | (HIZ &lt;&lt; DRIVER) | MEMACCESS | PCSEL           BC000E
-00185: (EAH &lt;&lt; LOAD) | (CONSTR &lt;&lt; DRIVER)                                               0000BF
-00285: (EAL &lt;&lt; LOAD) | (HIZ &lt;&lt; DRIVER) | MEMACCESS | PCCLOCKLO | PCCLOCKHI | PCSEL      AC00EE
-00385: (AREG &lt;&lt; DRIVER) | MEMACCESS | MWRITE | UCOUNTERRESET                            620001</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-280" y="820"/>
+      <pos x="-120" y="1200"/>
     </visualElement>
     <visualElement>
       <elementName>Not</elementName>
@@ -2421,6 +2402,81 @@
         </entry>
       </elementAttributes>
       <pos x="-160" y="1760"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>COUNT</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="1240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Reset</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>  CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+# 24: (EAL &lt;&lt; LOAD) | (CONSTR &lt;&lt; DRIVER) | (0x0c &lt;&lt; CONSTANT)
+    c       1  0xEA      0      x      x        1       0       1       1         1        0     0x0C    24        x
+
+# 25: (EAH &lt;&lt; LOAD) | (CONSTR &lt;&lt; DRIVER) | (0x0f &lt;&lt; CONSTANT) 
+# CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+    c       0  0x85      0      0      0        0       1       1       1         1        0     0x0F    25        x
+
+# 26: (PCL &lt;&lt; LOAD) | (HIZ &lt;&lt; DRIVER) | MEMACCESS | PCCLOCKLO 
+# CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+    c       0  0x85      0      0      0        1       1       1       0         1        1        x    26        x
+
+# 27: (EAL &lt;&lt; LOAD) | (CONSTR &lt;&lt; DRIVER) | (0x0d &lt;&lt; CONSTANT)
+# CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+    c       0  0x85      0      0      0        1       0       1       1         1        0     0x0D    27        x
+
+# 28: (PCH &lt;&lt; LOAD) | (HIZ &lt;&lt; DRIVER) | MEMACCESS | PCCLOCKHI
+# CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+    c       0  0x85      0      0      0        1       1       0       1         1        1        x    28        x
+
+# 29: (SPREG &lt;&lt; LOAD) | (CONSTR &lt;&lt; DRIVER) | (0x0f &lt;&lt; CONSTANT) | UCOUNTERRESET
+# CLK MSTRRST INSTR Status BREG_7 ~Carry8 ~EAHCLK ~EALCLK ~PCHCLK ~PCLCLK ~SPREGCLK ~CONSTOE Constant COUNT CtrlWord
+    c       0  0x85      0      0      0        1       1       1       1         0        0     0x0F    29        x
+
+</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="360" y="1660"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>textOrientation</string>
+          <de.neemann.digital.draw.graphics.Orientation>RIGHTCENTER</de.neemann.digital.draw.graphics.Orientation>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>Reset
+--------
+24: 000CEF
+25: 000FBF
+26: 24006E
+27: 000DEF
+28: 28003E
+29: 020F4F</string>
+        </entry>
+      </elementAttributes>
+      <pos x="640" y="780"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -2785,8 +2841,8 @@
       <p2 x="1860" y="1580"/>
     </wire>
     <wire>
-      <p1 x="0" y="1200"/>
-      <p2 x="40" y="1200"/>
+      <p1 x="-120" y="1200"/>
+      <p2 x="-80" y="1200"/>
     </wire>
     <wire>
       <p1 x="1840" y="1200"/>
@@ -2965,12 +3021,12 @@
       <p2 x="640" y="1220"/>
     </wire>
     <wire>
-      <p1 x="0" y="1220"/>
-      <p2 x="40" y="1220"/>
+      <p1 x="-120" y="1220"/>
+      <p2 x="-80" y="1220"/>
     </wire>
     <wire>
-      <p1 x="220" y="1220"/>
-      <p2 x="340" y="1220"/>
+      <p1 x="100" y="1220"/>
+      <p2 x="120" y="1220"/>
     </wire>
     <wire>
       <p1 x="1840" y="1220"/>
@@ -2995,6 +3051,10 @@
     <wire>
       <p1 x="640" y="1220"/>
       <p2 x="680" y="1220"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="1220"/>
+      <p2 x="340" y="1220"/>
     </wire>
     <wire>
       <p1 x="2540" y="1860"/>
@@ -3137,8 +3197,8 @@
       <p2 x="1280" y="980"/>
     </wire>
     <wire>
-      <p1 x="0" y="1240"/>
-      <p2 x="40" y="1240"/>
+      <p1 x="-120" y="1240"/>
+      <p2 x="-80" y="1240"/>
     </wire>
     <wire>
       <p1 x="1840" y="1240"/>
@@ -3155,6 +3215,10 @@
     <wire>
       <p1 x="1400" y="1240"/>
       <p2 x="1440" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="1240"/>
+      <p2 x="140" y="1240"/>
     </wire>
     <wire>
       <p1 x="1840" y="1880"/>
@@ -3687,6 +3751,10 @@
     <wire>
       <p1 x="1620" y="820"/>
       <p2 x="1620" y="1900"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="1220"/>
+      <p2 x="120" y="1240"/>
     </wire>
     <wire>
       <p1 x="120" y="1420"/>
